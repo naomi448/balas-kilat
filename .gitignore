@@ -1,0 +1,21 @@
+# Secrets — never commit tokens or env files
+.env
+.env.*
+!.env.example
+*token*
+*secret*
+
+# Node / Vite
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# Even Hub packages
+*.ehpk
+
+# OS / editor
+.DS_Store
+*.log

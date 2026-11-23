@@ -1,0 +1,103 @@
+/* Balas Kilat — 576x288 green monochrome stage.
+   Design rules: <= 30 chars/line, <= 7 lines/screen, one idea + one
+   action per screen, large font, green on black (contrast is free). */
+
+:root {
+  --green: #3dff5e;
+  --green-dim: #1d7a33;
+  --bg: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0a0f0a;
+  min-height: 100vh;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+#stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 12px;
+  gap: 14px;
+}
+
+#screen {
+  width: 576px;
+  max-width: 96vw;
+  height: 288px;
+  background: var(--bg);
+  color: var(--green);
+  border: 2px solid var(--green-dim);
+  border-radius: 10px;
+  padding: 18px 22px;
+  font-size: 25px;
+  line-height: 1.42;
+  letter-spacing: 0.2px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 0 6px rgba(61, 255, 94, 0.45);
+}
+
+#screen .line {
+  min-height: 1.42em;
+  white-space: pre;
+  overflow: hidden;
+}
+
+#screen .line.sel {
+  background: rgba(61, 255, 94, 0.14);
+}
+
+#hint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 720px;
+  color: #9fb8a4;
+  font-size: 13px;
+}
+
+#hint button {
+  background: #12240f;
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font: inherit;
+  cursor: pointer;
+}
+
+#hint input {
+  background: #0d1a0c;
+  color: var(--green);
+  border: 1px solid var(--green-dim);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font: inherit;
+  width: 240px;
+}
+
+#hint a {
+  color: var(--green);
+}
+
+#hint .sep {
+  width: 14px;
+}
+
+#voiceStatus {
+  color: #c9e7cd;
+  min-width: 120px;
+}
